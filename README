@@ -1,0 +1,9 @@
+This is a small C++ executable that extracts wifi information from EyeFi logs and uses a Google location API to get longitude, latitude pairs out of that info.
+
+To build, you need:
+
+* CMake (http://www.cmake.org/)
+* boost (http://www.boost.org/, should be on your system anyway)
+* exiv2 (http://www.exiv2.org/, libexiv2-dev package if you're under linux)
+* cpp-netlib (http://cpp-netlib.github.com/, this is pulled in as a git submodule)
+
