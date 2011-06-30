@@ -37,7 +37,7 @@ access_point_strengths read_logfile( const string &image_name, istream &logfile)
     // find any access points between power on and the picture time...
     unsigned int picture_timestamp = 0; // when is the picture taken.
     bool picture_found = false;
-    while( getline( logfile, buffer) && !picture_found)
+    while( !picture_found && getline( logfile, buffer) )
     {
         vector<string> fields;
         boost::split( fields, buffer, boost::algorithm::is_any_of( ","));
@@ -178,7 +178,7 @@ int main( int argc, char *argv[])
         // if access points were found, try to geo-locate them and add the appropriate tags to the picture
         if ( !access_points.empty())
         {
-            std::cout << "found " << access_points.size() << " access points\n";
+            std::cout << "found " << access_points.size() << ((access_points.size()==1)?" access point\n":" access points\n");
             string json_request = access_points_json( access_points);
 
             string json_reply = send_request( json_request);
