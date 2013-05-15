@@ -14,7 +14,7 @@ add_definitions(-D_SCL_SECURE_NO_WARNINGS)
 SET(Boost_USE_STATIC_LIBS OFF)
 SET(Boost_USE_MULTITHREAD ON)
 
-FIND_PACKAGE( Boost COMPONENTS filesystem regex)
+FIND_PACKAGE( Boost COMPONENTS system filesystem regex)
 
 # NOTE: I assume that exiv2 (exiv2-dev) is available to the compiler and linker 
 # (on linux: just install libexiv2-dev using your package manager).
